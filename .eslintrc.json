@@ -6,9 +6,7 @@
   },
   "settings": {
     "react": {
-      "createClass": "createReactClass",
-      "pragma": "React",
-      "version": "16.8"
+      "version": "detect"
     },
     "propWrapperFunctions": [
       "forbidExtraProps",
@@ -21,10 +19,15 @@
       }
     ]
   },
-  "extends": ["airbnb-base", "plugin:react/recommended"],
-  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 8,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
@@ -32,7 +35,7 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": ["react"],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "react/require-extension": "off",
     "react/jsx-filename-extension": 0,

@@ -1,12 +1,13 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import App from 'containers/App';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import App from "containers/App";
 
-import InitialState from 'store/InitialState';
-import ConfigureStore from 'store/ConfigureStore';
+// FIXME PATH
+import initialState from "../base/store";
+import { configureStore } from "../base/store";
 
-const store = ConfigureStore(InitialState);
+const store = configureStore(initialState);
 
 const ReactApp = () => (
   <Provider store={ store }>
@@ -14,4 +15,4 @@ const ReactApp = () => (
   </Provider>
 );
 
-render(<ReactApp />, document.getElementById('root'));
+render(<ReactApp />, document.getElementById("root"));

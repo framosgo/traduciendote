@@ -1,20 +1,20 @@
 export default {
   PUBLIC: {
-    ROOT: '/'
+    ROOT: "/"
   },
   PRIVATE: {
-    DASHBOARD: '/dashboard',
-    PROFILE: '/profile',
-    CONFIGURATION: '/configuration',
+    DASHBOARD: "/dashboard",
+    PROFILE: "/profile",
+    CONFIGURATION: "/configuration",
     USERS: {
-      ROOT: '/users',
-      CREATE: '/users/create'
+      ROOT: "/users",
+      CREATE: "/users/create"
     },
     ROLES: {
-      ROOT: '/roles',
-      CREATE: '/roles/create'
+      ROOT: "/roles",
+      CREATE: "/roles/create"
     },
-    PERMITS: '/permits',
-    MENU_OPTIONS: '/menu-options'
+    PERMITS: "/permits",
+    MENU_OPTIONS: "/menu-options"
   }
 };

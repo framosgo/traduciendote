@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "jsx": "react",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test"
+  ],
+  "paths": {
+    "*": [
+      "src/types/*",
+      "*"
+    ],
+    "@app/*": [
+      "src/*"
+    ],
+    "@base/*": [
+      "src/base/*"
+    ],
+    "@assets/*": [
+      "src/app/assets/*"
+    ],
+    "services/*": [
+      "services/*"
+    ]
+  },
+  "typeRoots": [
+    "node_modules/@types",
+    "src/types"
+  ]
+}

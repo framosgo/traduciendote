@@ -1,8 +1,8 @@
-import { ENV } from './env';
+import { ENV } from "./env";
 
 const { EXPRESS_PORT, SOCKET_PORT } = ENV;
-export const BASE_URL = 'http://localhost';
-export const SERVER_URL = `${ BASE_URL }:${ EXPRESS_PORT }`;
+export const BASE_URL = "http://localhost";
+export const SERVER_URL = `${BASE_URL}:${EXPRESS_PORT}`;
 
 export const HOST = {
   SERVER_URL,
