@@ -6,6 +6,7 @@ import { AppState, Action } from '../../types';
 import * as actions from './actions';
 import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
+import Loading from '../../components/Loading';
 
 type Props = {
   label: string;
@@ -21,6 +22,7 @@ const LoginContainer: React.FunctionComponent<Props> = props => {
 
   return (
     <Container>
+      <Loading text="hjola" />
       <Text>
         { id } { name }
       </Text>

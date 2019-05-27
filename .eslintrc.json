@@ -36,8 +36,9 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
+    "react-hooks/rules-of-hooks": [2],
     "@typescript-eslint/indent": [2, 2],
     "react/require-extension": "off",
     "react/jsx-filename-extension": 0,

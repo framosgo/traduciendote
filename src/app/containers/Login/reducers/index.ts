@@ -8,6 +8,7 @@ const loginRequest = (state: LoginState, action: LoginActionType): LoginState =>
 const loginError = (state: LoginState, action: LoginActionType): LoginState => state;
 const loginSuccess = (state: LoginState, action: LoginActionType): LoginState => {
   // FIXME TYPES
+  console.log(111111, state);
   return action.payload;
 };
 const logoutRequest = (state: LoginState, action: LoginActionType): LoginState => state;
