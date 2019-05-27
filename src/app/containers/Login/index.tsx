@@ -24,7 +24,7 @@ const LoginContainer: React.FunctionComponent<Props> = props => {
     <Container>
       <Loading text="hjola" />
       <Text>
-        { id } { name }
+        {id} {name}
       </Text>
     </Container>
   );

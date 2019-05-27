@@ -1,10 +1,10 @@
 /* eslint-disable global-require */
 import { createLogger } from 'redux-logger';
 import reduxReqMiddleware from 'redux-req-middleware';
-import { createStore, applyMiddleware, Store } from 'redux';
+import { createStore, applyMiddleware, Store, Action } from 'redux';
 // FIXME (path)
 import { env } from '../shared/env';
-import { AppState, Action } from '../../app/types';
+import { AppState } from '../../app/types';
 import { rootReducer } from '../reducers';
 
 export const configureStore = (initialState: AppState): Store<{}, Action> => {
