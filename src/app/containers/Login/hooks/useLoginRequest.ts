@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { postRequest } from '../api';
 import * as actions from '../actions';
 

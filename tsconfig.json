@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "pretty": true,
     "allowJs": true,
+    "checkJs": true,
     "importHelpers": true,
     "target": "es6",
     "sourceMap": true,
