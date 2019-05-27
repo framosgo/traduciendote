@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from 'fs';
 
 function fileExists(filename) {
   try {
@@ -21,12 +21,12 @@ function readLines(path, options) {
   return fs
     .readFileSync(path, options)
     .toString()
-    .split("\n");
+    .split('\n');
 }
 
 function writeFile(file, content) {
   try {
-    fs.writeFileSync(file, content, "utf8");
+    fs.writeFileSync(file, content, 'utf8');
     return true;
   } catch (e) {
     throw new Error(e);

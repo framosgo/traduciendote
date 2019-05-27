@@ -1,19 +1,16 @@
-import { Record } from "immutable";
-import produce from "immer";
-
-import { AppState } from "../../../types";
+import { AppState } from '../../../types';
 
 export interface LoginState {
   id: number;
   name: string;
 }
 
-export const LoginModel = Record<LoginState>({
+export const LoginModel: LoginState = {
   id: -1,
-  name: "Pepe"
-});
+  name: 'hola'
+};
 
 export const setInitialState = (initialState: AppState): AppState => {
-  initialState.login = new LoginModel();
+  initialState.login = LoginModel;
   return initialState;
 };

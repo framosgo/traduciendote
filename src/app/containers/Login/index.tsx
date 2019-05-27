@@ -1,12 +1,11 @@
-import React, { FunctionComponent } from "react";
-import { bindActionCreators } from "redux";
-import { useDispatch, useSelector } from "react-redux";
-import PropTypes from "prop-types";
-import { AppState, Action } from "../../types";
+import React, { FunctionComponent, useEffect } from 'react';
+import { bindActionCreators } from 'redux';
+import { useSelector } from 'react-redux';
+import { AppState, Action } from '../../types';
 
-import * as actions from "./actions";
-import { useLogin } from "./hooks";
-import { Container, Text } from "./styles";
+import * as actions from './actions';
+import { useLoginRequest } from './hooks';
+import { Container, Text } from './styles';
 
 type Props = {
   label: string;
@@ -15,14 +14,16 @@ type Props = {
 };
 
 const LoginContainer: FunctionComponent<Props> = props => {
-  const dispatch = useDispatch();
-  const selector = useSelector((state: AppState) => state);
-  dispatch(actions.loginRequest("1", "2"));
-  dispatch(actions.loginError("1", "2"));
+  useLoginRequest();
+
+  const login = useSelector((state: AppState) => state.login);
+  const { id, name } = login;
 
   return (
     <Container>
-      <Text>hola </Text>
+      <Text>
+        { id } { name }
+      </Text>
     </Container>
   );
 };

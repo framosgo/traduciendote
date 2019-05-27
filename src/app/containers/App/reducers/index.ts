@@ -1,6 +1,6 @@
-import { createReducer } from "base";
-import ActionTypes from "../actionTypes";
-import { AppModel } from "../models";
+import { createReducer } from 'base';
+import ActionTypes from '../actionTypes';
+import { AppModel } from '../models';
 
 const setLanguage = (state, { payload }) => ({
   ...state,

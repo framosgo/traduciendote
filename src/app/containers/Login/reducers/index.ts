@@ -1,36 +1,20 @@
 // FIXME
-import { Record } from "immutable";
+import { createReducer } from '../../../../base';
+import { LoginState, LoginModel } from '../models';
+import { ActionTypes, LoginActionType } from '../actionTypes';
+import { Action, AppState } from '../../../types';
 
-import { createReducer } from "../../../../base";
-import { LoginModel, LoginState } from "../models";
-import { ActionTypes, LoginActionType } from "../actionTypes";
-import { Action, AppState } from "../../../types";
-
-const loginRequest = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state;
-const loginError = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state;
-const loginSuccess = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state;
-
-const logoutRequest = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state;
-const logoutError = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state;
-const logoutSuccess = (
-  state: Record<LoginState>,
-  action: LoginActionType
-): LoginState => state.set("name", "").set("id");
+const loginRequest = (state: LoginState, action: LoginActionType): LoginState => state;
+const loginError = (state: LoginState, action: LoginActionType): LoginState => state;
+const loginSuccess = (state: LoginState, action: LoginActionType): LoginState => {
+  console.log(888888, state, action);
+  // return (state.name = 'holaaaa');
+  return state; // (state.name = 'holaa');
+  // return (state.name = action.payload.name);
+};
+const logoutRequest = (state: LoginState, action: LoginActionType): LoginState => state;
+const logoutError = (state: LoginState, action: LoginActionType): LoginState => state;
+const logoutSuccess = (state: LoginState, action: LoginActionType): LoginState => state.set('name', '').set('id');
 
 const actionHandlers = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,
@@ -41,4 +25,4 @@ const actionHandlers = {
   [ActionTypes.LOGOUT_SUCCESS]: logoutSuccess
 };
 
-export default createReducer(new LoginModel(), actionHandlers);
+export default createReducer(LoginModel, actionHandlers);

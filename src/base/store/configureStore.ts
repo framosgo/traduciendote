@@ -1,18 +1,17 @@
-import { createLogger } from "redux-logger";
-import reduxReqMiddleware from "redux-req-middleware";
-import { createStore, applyMiddleware, Store } from "redux";
-// FIXME (path)
-import { env } from "../shared/env";
-import { State, Action } from "../../app/types";
-import { rootReducer } from "../reducers";
+/* eslint-disable global-require */
 
-export const configureStore = (initialState): Store<{}, Action> => {
+import { createLogger } from 'redux-logger';
+import reduxReqMiddleware from 'redux-req-middleware';
+import { createStore, applyMiddleware, Store } from 'redux';
+// FIXME (path)
+import { env } from '../shared/env';
+import { AppState, Action } from '../../app/types';
+import { rootReducer } from '../reducers';
+
+export const configureStore = (initialState: AppState): Store<{}, Action> => {
   let middleware;
-  if (env === "development") {
-    middleware = applyMiddleware(
-      reduxReqMiddleware(),
-      createLogger({ level: "info", collapsed: true })
-    );
+  if (env === 'development') {
+    middleware = applyMiddleware(reduxReqMiddleware(), createLogger({ level: 'info', collapsed: true }));
   } else {
     middleware = applyMiddleware(reduxReqMiddleware());
   }
@@ -20,8 +19,9 @@ export const configureStore = (initialState): Store<{}, Action> => {
   const store = createStore(rootReducer, initialState, middleware);
 
   if (module.hot) {
-    module.hot.accept("../reducers", () => {
-      const nextRootReducer = require("../reducers");
+    module.hot.accept('../reducers', () => {
+      /* eslint global-require: "error" */
+      const nextRootReducer = require('../reducers');
 
       store.replaceReducer(nextRootReducer);
     });

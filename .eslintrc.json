@@ -21,9 +21,10 @@
   },
   "extends": [
     "airbnb-base",
+    "prettier/@typescript-eslint",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -37,6 +38,7 @@
   },
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
+    "@typescript-eslint/indent": [2, 2],
     "react/require-extension": "off",
     "react/jsx-filename-extension": 0,
     "react/jsx-pascal-case": 2,
@@ -117,11 +119,12 @@
     "space-in-parens": ["error", "never"],
     "eol-last": 0,
     "no-trailing-spaces": 0,
+    "@typescript-eslint/no-var-requires": [0],
     "padded-blocks": 0,
     "arrow-parens": 0,
     "prefer-arrow-callback": 2,
     "no-param-reassign": [
-      2,
+      1,
       {
         "props": false
       }

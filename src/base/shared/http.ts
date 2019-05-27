@@ -1,8 +1,8 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from 'axios';
 
 const createInstance = (): AxiosInstance => {
   const instance = axios.create({
-    headers: { "Content-Type": "application/json" }
+    headers: { 'Content-Type': 'application/json' }
   });
   return instance;
 };

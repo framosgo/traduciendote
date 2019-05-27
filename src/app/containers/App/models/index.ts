@@ -1,4 +1,4 @@
-import { camelize } from "@base/shared/utils";
+import { camelize } from '@base/shared/utils';
 
 export const AppModel = {
   lang: camelize(navigator.language)

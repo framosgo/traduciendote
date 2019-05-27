@@ -1,3 +1,3 @@
-import { createActionType } from "base";
+import { createActionType } from 'base';
 
-export default createActionType(["SET_LANGUAGE"]);
+export default createActionType(['SET_LANGUAGE']);

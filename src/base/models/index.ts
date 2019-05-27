@@ -1,4 +1,4 @@
-import * as LoginModel from "../../app/containers/Login/models";
+import * as LoginModel from '../../app/containers/Login/models';
 
 const modelIndex = [LoginModel];
 

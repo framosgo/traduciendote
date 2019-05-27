@@ -1,10 +1,8 @@
-import { Reducer } from "redux";
-import { Action, ActionHandler, State } from "../../app/types";
+import { Reducer } from 'redux';
+import produce from 'immer';
+import { Action } from '../../app/types';
 
-export function createReducer<T, ActionHandler>(
-  initialState: T,
-  actionHandler: ActionHandler
-) {
+export function createReducer<T, ActionHandler>(initialState: T, actionHandler: ActionHandler) {
   return (state = initialState, action: Action): T => {
     const { type } = action;
     // FIXME actionHandler[type];

@@ -1,19 +1,13 @@
-import * as api from "../api";
-import { ActionTypes, LoginActionType } from "../actionTypes";
+import * as api from '../api';
+import { ActionTypes, LoginActionType } from '../actionTypes';
 // FIXME PATHS
-import { Action } from "../../../types";
+import { Action } from '../../../types';
 
-export const loginRequest = (
-  user: string,
-  password: string
-): LoginActionType => ({
+export const loginRequest = (user: string, password: string): LoginActionType => ({
   type: ActionTypes.LOGIN_REQUEST,
   request: api.postRequest(user, password)
 });
 
-export const loginError = (
-  user: string,
-  password: string
-): LoginActionType => ({
+export const loginError = (user: string, password: string): LoginActionType => ({
   type: ActionTypes.LOGIN_ERROR
 });

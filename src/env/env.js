@@ -6,5 +6,5 @@ export const ENV = {
 };
 
 export const APP = {
-  APP_NAME: "myAppName"
+  APP_NAME: 'myAppName'
 };
