@@ -1,3 +1,9 @@
-import { createActionType } from 'base';
+import { Action } from '../../../types';
 
-export default createActionType(['SET_LANGUAGE']);
+export enum ActionTypes {
+  SET_LANGUAGE = 'SET_LANGUAGE'
+}
+
+type setLanguage = Action<ActionTypes.SET_LANGUAGE>;
+
+export type AppActionType = setLanguage;

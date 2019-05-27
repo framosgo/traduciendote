@@ -1,4 +1,3 @@
-import { Record } from 'immutable';
 import { rootReducer } from '../../base/store';
 
 export type AppState = ReturnType<typeof rootReducer>;

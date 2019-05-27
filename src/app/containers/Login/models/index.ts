@@ -1,5 +1,4 @@
-import produce from 'immer';
-import { AppState } from '../../../types';
+import { AppState } from 'types';
 
 export interface LoginState {
   readonly id: number;

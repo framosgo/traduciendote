@@ -1,5 +1,3 @@
-import { Reducer } from 'redux';
-import produce from 'immer';
 import { Action } from '../../app/types';
 
 export function createReducer<T, ActionHandler>(initialState: T, actionHandler: ActionHandler) {

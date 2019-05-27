@@ -1,8 +1,8 @@
-import React, { Component, Suspense } from "react";
+import React, { Component, Suspense } from 'react';
 
-import { HashRouter as Router, Switch } from "react-router-dom";
-import { Routes } from "routes";
-import Header from "./components/Header";
+import { HashRouter as Router, Switch } from 'react-router-dom';
+import { Routes } from 'routes';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <Header />
         <Router>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={ <div>Loading...</div> }>
             <Switch>
               <Routes />
             </Switch>

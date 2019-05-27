@@ -1,19 +1,19 @@
 // FIXME
-import { createReducer } from '../../../../base';
+import { createReducer } from 'base';
+import { Action, AppState } from 'types';
 import { LoginState, LoginModel } from '../models';
 import { ActionTypes, LoginActionType } from '../actionTypes';
-import { Action, AppState } from '../../../types';
 
-const loginRequest = (state: LoginState, action: LoginActionType): LoginState => state;
-const loginError = (state: LoginState, action: LoginActionType): LoginState => state;
+const loginRequest = (state: LoginState): LoginState => state;
+const loginError = (state: LoginState): LoginState => state;
 const loginSuccess = (state: LoginState, action: LoginActionType): LoginState => {
   // FIXME TYPES
   console.log(111111, state);
   return action.payload;
 };
-const logoutRequest = (state: LoginState, action: LoginActionType): LoginState => state;
-const logoutError = (state: LoginState, action: LoginActionType): LoginState => state;
-const logoutSuccess = (state: LoginState, action: LoginActionType): LoginState => state;
+const logoutRequest = (state: LoginState): LoginState => state;
+const logoutError = (state: LoginState): LoginState => state;
+const logoutSuccess = (state: LoginState): LoginState => state;
 
 const actionHandlers = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,

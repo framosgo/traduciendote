@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 
 import ROUTES from './routes';
-// FIXME
-const Login = lazy(() => import('../containers/Login'));
+
+const Login = lazy(() => import('containers/Login'));
 
 export const Routes = () => <Route exact={ true } path={ ROUTES.PUBLIC.ROOT } component={ Login } />;

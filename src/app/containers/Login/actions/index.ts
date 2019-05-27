@@ -1,11 +1,11 @@
 import * as api from '../api';
 import { ActionTypes, LoginActionType } from '../actionTypes';
 
-export const loginRequest = (user: string, password: string): LoginActionType => ({
+export const loginRequest = (): LoginActionType => ({
   type: ActionTypes.LOGIN_REQUEST,
-  request: api.postRequest(user, password)
+  request: api.postRequest()
 });
 
-export const loginError = (user: string, password: string): LoginActionType => ({
+export const loginError = (): LoginActionType => ({
   type: ActionTypes.LOGIN_ERROR
 });

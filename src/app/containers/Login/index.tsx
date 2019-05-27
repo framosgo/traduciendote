@@ -1,12 +1,12 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector } from 'react-redux';
+import Loading from 'components/Loading';
 import { AppState, Action } from '../../types';
 
 import * as actions from './actions';
 import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
-import Loading from '../../components/Loading';
 
 type Props = {
   label: string;
@@ -24,7 +24,7 @@ const LoginContainer: React.FunctionComponent<Props> = props => {
     <Container>
       <Loading text="hjola" />
       <Text>
-        {id} {name}
+        { id } { name }
       </Text>
     </Container>
   );

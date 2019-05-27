@@ -15,38 +15,28 @@
     "outDir": "dist",
     "rootDir": "src",
     "jsx": "react",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "paths": {
+      "components/*": ["src/app/components/*"],
+      "containers/*": ["src/app/containers/*"],
+      "app/*": ["src/app/*"],
+      "base": ["src/base/index"],
+      "base/*": ["src/base/*"],
+      "assets/*": ["src/app/assets/*"],
+      "types": ["src/app/types/index"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "test"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "test"],
   "paths": {
-    "*": [
-      "src/types/*",
-      "*"
-    ],
-    "@app/*": [
-      "src/*"
-    ],
-    "@base/*": [
-      "src/base/*"
-    ],
-    "@assets/*": [
-      "src/app/assets/*"
-    ],
-    "services/*": [
-      "services/*"
-    ]
+    "*": ["src/types/*", "*"],
+    "@app/*": ["src/app/*"],
+    "@base/*": ["src/base/*"],
+    "@assets/*": ["src/app/assets/*"],
+    "services/*": ["services/*"]
   },
-  "typeRoots": [
-    "node_modules/@types",
-    "src/types"
-  ]
+  "typeRoots": ["node_modules/@types", "src/types"]
 }

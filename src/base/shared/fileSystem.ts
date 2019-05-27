@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-function fileExists(filename) {
+function fileExists(filename: string): boolean {
   try {
     fs.accessSync(filename);
     return true;
@@ -9,22 +9,22 @@ function fileExists(filename) {
   }
 }
 
-function readDir(path) {
+function readDir(path: string) {
   return fs.readdirSync(path);
 }
 
-function readFile(path, options) {
+function readFile(path: string, options) {
   return fs.readFileSync(path, options);
 }
 
-function readLines(path, options) {
+function readLines(path: string, options) {
   return fs
     .readFileSync(path, options)
     .toString()
     .split('\n');
 }
 
-function writeFile(file, content) {
+function writeFile(file: string, content) {
   try {
     fs.writeFileSync(file, content, 'utf8');
     return true;

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from 'containers/App';
 
 // FIXME PATH
-import initialState from '../base/store';
+import { initialState } from '../base/store';
 import { configureStore } from '../base/store';
 
 const store = configureStore(initialState);
