@@ -7,14 +7,12 @@ import { Action, AppState } from '../../../types';
 const loginRequest = (state: LoginState, action: LoginActionType): LoginState => state;
 const loginError = (state: LoginState, action: LoginActionType): LoginState => state;
 const loginSuccess = (state: LoginState, action: LoginActionType): LoginState => {
-  console.log(888888, state, action);
-  // return (state.name = 'holaaaa');
-  return state; // (state.name = 'holaa');
-  // return (state.name = action.payload.name);
+  // FIXME TYPES
+  return action.payload;
 };
 const logoutRequest = (state: LoginState, action: LoginActionType): LoginState => state;
 const logoutError = (state: LoginState, action: LoginActionType): LoginState => state;
-const logoutSuccess = (state: LoginState, action: LoginActionType): LoginState => state.set('name', '').set('id');
+const logoutSuccess = (state: LoginState, action: LoginActionType): LoginState => state;
 
 const actionHandlers = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,

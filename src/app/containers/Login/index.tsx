@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { useSelector } from 'react-redux';
 import { AppState, Action } from '../../types';
@@ -13,10 +13,10 @@ type Props = {
   onIncrement: () => void;
 };
 
-const LoginContainer: FunctionComponent<Props> = props => {
+const LoginContainer: React.FunctionComponent<Props> = props => {
   useLoginRequest();
 
-  const login = useSelector((state: AppState) => state.login);
+  const { login } = useSelector((state: AppState) => state);
   const { id, name } = login;
 
   return (

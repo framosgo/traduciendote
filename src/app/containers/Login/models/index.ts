@@ -1,16 +1,16 @@
+import produce from 'immer';
 import { AppState } from '../../../types';
 
 export interface LoginState {
-  id: number;
-  name: string;
+  readonly id: number;
+  readonly name: string;
 }
 
 export const LoginModel: LoginState = {
   id: -1,
-  name: 'hola'
+  name: 'Default Text'
 };
 
 export const setInitialState = (initialState: AppState): AppState => {
-  initialState.login = LoginModel;
-  return initialState;
+  return (initialState.login = LoginModel);
 };

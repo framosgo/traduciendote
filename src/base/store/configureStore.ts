@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-
 import { createLogger } from 'redux-logger';
 import reduxReqMiddleware from 'redux-req-middleware';
 import { createStore, applyMiddleware, Store } from 'redux';
