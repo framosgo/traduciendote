@@ -1,5 +1,3 @@
-// FIXME TO TS
-const setGlobalState = (initialState, models) =>
-  models.default.modelIndex.map(model => model.setInitialState(initialState));
-
-export default setGlobalState;
+/* eslint-disable */
+export const setGlobalState = (initialState: any, models: any): any =>
+  models.default.modelIndex.map((model: any): any => model.setInitialState(initialState));
