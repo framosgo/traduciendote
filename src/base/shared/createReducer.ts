@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Action } from 'redux';
 
 export function createReducer<T, ActionHandler>(initialState: T, actionHandler: ActionHandler) {

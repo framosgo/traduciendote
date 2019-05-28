@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { rootReducer } from '../../base/store';
 
 export type AppState = ReturnType<typeof rootReducer>;

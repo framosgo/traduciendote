@@ -1,3 +1,4 @@
+/* eslint-disable */
 import produce from 'immer';
 import { Action, AppState } from '../../app/types';
 
