@@ -1,5 +1,5 @@
 import * as models from '../models';
-import setGlobalState from './globalState';
+import { setGlobalState } from './globalState';
 
 export const initialState = {};
 
