@@ -3,7 +3,7 @@ import express from 'express';
 import Bundler from 'parcel-bundler';
 import setRouting from './routing';
 import setStatics from './statics';
-// FIXME
+
 const EXPRESS_PORT = 8000;
 const entryFiles = path.join(__dirname, '../src/app/index.html');
 const app = express();

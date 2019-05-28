@@ -1,15 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import App from 'containers/App';
 
-// FIXME PATH
-import { initialState } from '../base/store';
-import { configureStore } from '../base/store';
+import { initialState } from 'base/store/index';
+import { configureStore } from 'base/store/index';
+import App from 'containers/App';
 
 const store = configureStore(initialState);
 
-const ReactApp = () => (
+const ReactApp = (): any => (
   <Provider store={ store }>
     <App />
   </Provider>
