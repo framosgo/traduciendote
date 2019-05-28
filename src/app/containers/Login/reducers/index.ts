@@ -1,17 +1,17 @@
 import { createReducer } from 'base';
-import { LoginModel, loginInitialState } from '../models';
+import { LoginType, loginState } from '../models';
 import { ActionTypes, LoginActionType } from '../actionTypes';
 
-const loginRequest = (state: LoginModel): LoginModel => state;
-const loginError = (state: LoginModel): LoginModel => state;
-const loginSuccess = (state: LoginModel, action: LoginActionType): LoginModel => {
+const loginRequest = (state: LoginType): LoginType => state;
+const loginError = (state: LoginType): LoginType => state;
+const loginSuccess = (state: LoginType, action: LoginActionType): LoginType => {
   // FIXME TYPES
   console.log(111111, state);
   return action.payload;
 };
-const logoutRequest = (state: LoginModel): LoginModel => state;
-const logoutError = (state: LoginModel): LoginModel => state;
-const logoutSuccess = (state: LoginModel): LoginModel => state;
+const logoutRequest = (state: LoginType): LoginType => state;
+const logoutError = (state: LoginType): LoginType => state;
+const logoutSuccess = (state: LoginType): LoginType => state;
 
 const actionHandlers = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,
@@ -22,4 +22,4 @@ const actionHandlers = {
   [ActionTypes.LOGOUT_SUCCESS]: logoutSuccess
 };
 
-export default createReducer(loginInitialState, actionHandlers);
+export default createReducer(loginState, actionHandlers);

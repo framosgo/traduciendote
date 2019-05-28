@@ -1,4 +1,4 @@
-import { Action } from '../../app/types';
+import { Action } from 'redux';
 
 export function createReducer<T, ActionHandler>(initialState: T, actionHandler: ActionHandler) {
   return (state = initialState, action: Action): T => {
