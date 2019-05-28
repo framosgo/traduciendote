@@ -94,7 +94,7 @@
     "import/default": 0,
     "implicit-arrow-linebreak": [0, "beside"],
     "arrow-body-style": [0, "as-needed"],
-    "max-len": [2, { "code": 120 }],
+    "max-len": [2, { "code": 100 }],
     "max-statements-per-line": [2, { "max": 1 }],
     "import/no-duplicates": 0,
     "import/no-extraneous-dependencies": 0,

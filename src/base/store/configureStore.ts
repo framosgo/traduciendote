@@ -10,7 +10,10 @@ import { rootReducer } from '../reducers';
 export const configureStore = (initialState: AppState): Store<{}, Action> => {
   let middleware;
   if (env === 'development') {
-    middleware = applyMiddleware(reduxReqMiddleware(), createLogger({ level: 'info', collapsed: true }));
+    middleware = applyMiddleware(
+      reduxReqMiddleware(),
+      createLogger({ level: 'info', collapsed: true })
+    );
   } else {
     middleware = applyMiddleware(reduxReqMiddleware());
   }
