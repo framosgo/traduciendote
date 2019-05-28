@@ -1,15 +1,13 @@
 import { AppState } from 'types';
+import { LoginModel } from './login.model';
 
-export interface LoginState {
-  readonly id: number;
-  readonly name: string;
-}
+export { LoginModel } from './login.model';
 
-export const LoginModel: LoginState = {
+export const loginInitialState: LoginModel = {
   id: -1,
   name: 'Default Text'
 };
 
 export const setInitialState = (initialState: AppState): AppState => {
-  return (initialState.login = LoginModel);
+  return (initialState.login = loginInitialState);
 };

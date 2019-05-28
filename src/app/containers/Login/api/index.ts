@@ -1,6 +1,7 @@
 import { http, envConf } from 'base';
+import { LoginModel } from '../models';
 
-export const postRequest = async (): Promise<any> => {
+export const postRequest = async (): Promise<LoginModel> => {
   try {
     const { data } = await http.get(`${ envConf.API.LOGIN_GET }`);
     return data;
