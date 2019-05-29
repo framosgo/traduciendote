@@ -1,5 +1,5 @@
 import path from 'path';
-import express, { Application } from 'express';
+import express from 'express';
 import Bundler from 'parcel-bundler';
 import setRouting from './routing';
 import setStatics from './statics';

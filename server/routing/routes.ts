@@ -1,4 +1,4 @@
-import { Express, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import loginPost from '../mocks/login.post.json';
 import { Routes } from './types';
 

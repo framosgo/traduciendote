@@ -3,7 +3,7 @@ import express, { Express } from 'express';
 
 const env = process.env.NODE_ENV;
 
-const commonStatics = () => [];
+const commonStatics = (): any[] => [];
 
 const devStatics = () => [{ route: '/api', dir: path.join(__dirname, '../mocks') }];
 
