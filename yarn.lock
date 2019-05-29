@@ -741,7 +741,11 @@
     pirates "^4.0.0"
     source-map-support "^0.5.9"
 
+<<<<<<< HEAD
 "@babel/runtime@^7.0.0":
+=======
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0":
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
   dependencies:
@@ -3226,6 +3230,10 @@ history@4.7.2:
 history@^4.8.0-beta.0:
   version "4.8.0-beta.0"
   resolved "https://registry.yarnpkg.com/history/-/history-4.8.0-beta.0.tgz#8b48c1354ac290341c0d73dd33c763bd140531f4"
+<<<<<<< HEAD
+=======
+  integrity sha512-LDjPtGgAFDO3lZ+bumN67k0R3GWvUBLLgRJpFU2mnJ1w+D5rEbiZC1c37yPla7tx/dUzVfznt5Rmttnz0MvGdA==
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
   dependencies:
     "@babel/runtime" "^7.1.2"
     loose-envify "^1.2.0"
@@ -5713,11 +5721,15 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
 
+<<<<<<< HEAD
 react-is@^16.6.0, react-is@^16.8.2:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
 
 react-is@^16.7.0, react-is@^16.8.1:
+=======
+react-is@^16.5.2, react-is@^16.6.3, react-is@^16.7.0, react-is@^16.8.1:
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
   version "16.8.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.2.tgz#09891d324cad1cb0c1f2d91f70a71a4bee34df0f"
 
@@ -5735,6 +5747,10 @@ react-redux@6.0.1:
 react-router-dom@4.4.0-beta.5:
   version "4.4.0-beta.5"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.4.0-beta.5.tgz#9247379e42606e117144339af40249977d1f1f08"
+<<<<<<< HEAD
+=======
+  integrity sha512-7ST248njfFXSTGjLld6kRUck14iezTs6EcgnTjaInUKhMnLFccAqfouyIzhIGZ3jnw/Yi0Q1LmiIM2HY0gn1rQ==
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
   dependencies:
     "@babel/runtime" "^7.1.2"
     history "^4.8.0-beta.0"
@@ -5745,17 +5761,31 @@ react-router-dom@4.4.0-beta.5:
     warning "^4.0.1"
 
 react-router@^4.4.0-beta.5:
+<<<<<<< HEAD
   version "4.4.0-beta.7"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.4.0-beta.7.tgz#a60e0f97107dbb9005596a23cccf8779382425a6"
+=======
+  version "4.4.0-beta.6"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.4.0-beta.6.tgz#37e1d9ce2be93df397cc1feb1dcd6460ea0b236b"
+  integrity sha512-esR1UHsPpfvehX5Qn7wQrOTFsl4PxiaX3GaYvtFDSEioMsTl0zkASJBm1fXKgR9brUQX9kgiGq6XnCsiJU/82g==
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
   dependencies:
     "@babel/runtime" "^7.1.2"
     create-react-context "^0.2.2"
     history "^4.8.0-beta.0"
+<<<<<<< HEAD
     hoist-non-react-statics "^3.1.0"
     loose-envify "^1.3.1"
     path-to-regexp "^1.7.0"
     prop-types "^15.6.2"
     react-is "^16.6.0"
+=======
+    hoist-non-react-statics "^2.5.0"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.6.2"
+    react-is "^16.5.2"
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
@@ -6654,6 +6684,10 @@ tiny-inflate@^1.0.0:
 tiny-invariant@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.3.tgz#91efaaa0269ccb6271f0296aeedb05fc3e067b7a"
+<<<<<<< HEAD
+=======
+  integrity sha512-ytQx8T4DL8PjlX53yYzcIC0WhIZbpR0p1qcYjw2pHu3w6UtgWwFJQ/02cnhOnBBhlFx/edUIfcagCaQSe3KMWg==
+>>>>>>> fef0fdc0ac29a639c6586586362bd0afae5ae4eb
 
 tiny-warning@^1.0.0, tiny-warning@^1.0.2:
   version "1.0.2"
