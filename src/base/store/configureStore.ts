@@ -5,8 +5,8 @@ import reduxReqMiddleware from 'redux-req-middleware';
 import { createStore, applyMiddleware, Store, Action } from 'redux';
 // FIXME (path)
 import { env } from '../shared/env';
-import { AppState } from '../../app/types';
-import { rootReducer } from '../reducers';
+import { AppState } from '../../app/types/index';
+import { rootReducer } from '../reducers/index';
 
 export const configureStore = (initialState: AppState): Store<{}, Action> => {
   let middleware;

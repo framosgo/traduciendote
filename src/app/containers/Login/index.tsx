@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Loading from 'components/Loading';
-import { AppState } from '../../types';
+import Loading from 'components/Loading/index';
+import { AppState } from '../../types/index';
 
-import { useLoginRequest } from './hooks';
+import { useLoginRequest } from './hooks/index';
 import { Container, Text } from './styles';
 
 interface Props {
