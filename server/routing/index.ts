@@ -1,12 +1,12 @@
-import { Express } from 'express';
+import { Application } from 'express';
 import routes from './routes';
-import { Routes } from './types';
+import { Route, Routes } from './types';
 
-interface ExpressApp extends Express.Application {
+interface ExpressApp extends Application {
   [key: string]: any;
 }
 
 const setRouting = (app: ExpressApp): Routes =>
-  routes.map((route: any): any => app[route.method](route.url, route.handler));
+  routes.map((route: Route): Route => app[route.method](route.url, route.handler));
 
 export default setRouting;
