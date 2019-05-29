@@ -6,9 +6,7 @@
   },
   "settings": {
     "react": {
-      "createClass": "createReactClass",
-      "pragma": "React",
-      "version": "16.8"
+      "version": "detect"
     },
     "propWrapperFunctions": [
       "forbidExtraProps",
@@ -21,10 +19,16 @@
       }
     ]
   },
-  "extends": ["airbnb-base", "plugin:react/recommended"],
-  "parser": "babel-eslint",
+  "extends": [
+    "airbnb-base",
+    "prettier/@typescript-eslint",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 8,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
@@ -32,8 +36,16 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": ["react"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
+    "react-hooks/rules-of-hooks": [2],
+    "@typescript-eslint/indent": [2, 2],
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {
+        "allowTypedFunctionExpressions": true
+      }
+    ],
     "react/require-extension": "off",
     "react/jsx-filename-extension": 0,
     "react/jsx-pascal-case": 2,
@@ -82,7 +94,7 @@
     "import/default": 0,
     "implicit-arrow-linebreak": [0, "beside"],
     "arrow-body-style": [0, "as-needed"],
-    "max-len": [2, { "code": 120 }],
+    "max-len": [2, { "code": 100 }],
     "max-statements-per-line": [2, { "max": 1 }],
     "import/no-duplicates": 0,
     "import/no-extraneous-dependencies": 0,
@@ -114,11 +126,12 @@
     "space-in-parens": ["error", "never"],
     "eol-last": 0,
     "no-trailing-spaces": 0,
+    "@typescript-eslint/no-var-requires": [0],
     "padded-blocks": 0,
     "arrow-parens": 0,
     "prefer-arrow-callback": 2,
     "no-param-reassign": [
-      2,
+      1,
       {
         "props": false
       }

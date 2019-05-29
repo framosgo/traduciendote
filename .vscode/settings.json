@@ -8,5 +8,11 @@
   "files.eol": "\n",
   "files.associations": {
     "*.css": "postcss"
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }
