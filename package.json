@@ -9,7 +9,7 @@
     "logo": "node ./src/base/conf/.react-base/logo.js",
     "clean": "rimraf dist && rimraf .cache",
     "prettify": "prettier --write './src/**/*.{js,ts,tsx}'",
-    "lint": "npm run logo && eslint src --ext .ts --ext .js",
+    "lint": "npm run logo && eslint src --ext .ts --ext .tsx --ext .js",
     "start": "npm run logo && cross-env NODE_ENV=development ts-node server",
     "start:prod": "npm run build && cross-env NODE_ENV=production ts-node server",
     "build": "npm run logo && npm run clean && cross-env NODE_ENV=production parcel build src/app/index.html -d dist --no-cache",

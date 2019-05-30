@@ -1,9 +1,9 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, ComponentType } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ROUTES from './routes';
 
-const Login = lazy(() => import('containers/Login'));
+const Login = lazy((): Promise<{ default: ComponentType }> => import('containers/Login'));
 
 export const Routes = (): React.ReactNode => (
   <Router>
