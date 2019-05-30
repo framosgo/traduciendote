@@ -12,6 +12,7 @@ module.exports = {
   moduleNameMapper: {
     '^components(.*)$': '<rootDir>/src/app/components/$1'
   },
+  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   // Setup Enzyme
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFilesAfterEnv: ['<rootDir>/src/base/conf/setupEnzyme.ts']
