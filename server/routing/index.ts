@@ -1,4 +1,3 @@
-import { Application } from 'express';
 import routes from './routes';
 import { Route, ExpressApp, Routes } from './types';
 

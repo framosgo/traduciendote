@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ROUTES from './routes';
 
-const Login = lazy((): any => import('containers/Login'));
+const Login = lazy(() => import('containers/Login'));
 
-export const Routes = (): any => (
+export const Routes = (): React.ReactNode => (
   <Router>
     <Suspense fallback={ <div>Loading...</div> }>
       <Switch>
