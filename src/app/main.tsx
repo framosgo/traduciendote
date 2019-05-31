@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -8,7 +8,7 @@ import App from 'containers/App';
 
 const store = configureStore(initialState);
 
-const ReactApp = (): any => (
+const ReactApp: FunctionComponent = () => (
   <Provider store={ store }>
     <App />
   </Provider>

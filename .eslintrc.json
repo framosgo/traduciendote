@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "settings": {
     "react": {
@@ -36,7 +37,7 @@
       "experimentalObjectRestSpread": true
     }
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jest"],
   "rules": {
     "react-hooks/rules-of-hooks": [2],
     "@typescript-eslint/indent": [2, 2],
