@@ -15,10 +15,12 @@ export const configureStore = (initialState: AppState): Store<{}, Action> => {
       reduxReqMiddleware(),
       createLogger({ level: 'info', collapsed: true })
     );
+    middleware = composeWithDevTools(middleware);
   } else {
     middleware = applyMiddleware(reduxReqMiddleware());
   }
-  const store = createStore(rootReducer, initialState, composeWithDevTools(middleware));
+  const store = createStore(rootReducer, initialState, middleware);
+
   if (module.hot) {
     module.hot.accept('../reducers', () => {
       const nextRootReducer = require('../reducers');
