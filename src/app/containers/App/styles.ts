@@ -22,12 +22,6 @@ export const Global = createGlobalStyle`
     overflow: hidden;
   }
 
-  #root {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-  }
-
   a:link,
   a:visited {
     text-decoration: inherit;
