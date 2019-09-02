@@ -8,6 +8,6 @@ export const loginRequest = async (): Promise<LoggedUser | undefined> => {
     return createUserFromServer(data);
   } catch (error) {
     console.error(error);
-    return error;
+    throw new Error(error);
   }
 };

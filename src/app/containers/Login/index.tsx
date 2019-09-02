@@ -4,17 +4,17 @@ import Loading from 'components/Loading';
 
 import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
-import { getLoginData } from './selectors';
+import { getLoginData, isFetchingLogin } from './selectors';
 
 const LoginContainer: React.FunctionComponent = () => {
   useLoginRequest();
 
-  const login = useSelector(getLoginData);
-  const { id, name, isFetching } = login;
+  const { id, name } = useSelector(getLoginData);
+  const isLoading = useSelector(isFetchingLogin);
 
   return (
     <Container>
-      { isFetching && <Loading /> }
+      { isLoading && <Loading /> }
       <Text>
         { id } { name }
       </Text>
