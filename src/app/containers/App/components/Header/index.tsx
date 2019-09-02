@@ -1,5 +1,12 @@
 import React from 'react';
 
-const Header: React.FC = () => <header />;
+import { Wrapper, HeaderBar, HeaderSpacer } from './styles';
 
-export default Header; 
+const Header: React.FC = () => (
+  <Wrapper>
+    <HeaderBar>Fixed Header</HeaderBar>
+    <HeaderSpacer />
+  </Wrapper>
+);
+
+export default Header;

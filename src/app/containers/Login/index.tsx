@@ -6,25 +6,15 @@ import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
 import { getLoginData } from './selectors';
 
-interface Props {
-  label: string;
-  count: number;
-  onIncrement: () => void;
-}
-
-const LoginContainer: React.FunctionComponent<Props> = (props: Props) => {
+const LoginContainer: React.FunctionComponent = () => {
   useLoginRequest();
 
   const login = useSelector(getLoginData);
-  const { id, name } = login;
-  const { label, count } = props;
+  const { id, name, isFetching } = login;
 
   return (
     <Container>
-      <Loading text="hola" />
-      <Text>
-        { label } { count }
-      </Text>
+      { isFetching && <Loading /> }
       <Text>
         { id } { name }
       </Text>

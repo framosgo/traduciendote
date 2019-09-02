@@ -3,7 +3,7 @@ import { ActionTypes, LoginActionType } from '../actionTypes';
 
 export const loginRequest = (): LoginActionType => ({
   type: ActionTypes.LOGIN_REQUEST,
-  request: api.postRequest()
+  request: api.loginRequest()
 });
 
 export const logoutRequest = (): LoginActionType => ({
