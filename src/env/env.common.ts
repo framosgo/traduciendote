@@ -1,4 +1,3 @@
-// FIXME TO TS
 export const ENV = {
   EXPRESS_PORT: 8000,
   SOCKET: false,

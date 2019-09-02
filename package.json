@@ -5,22 +5,27 @@
   "author": "Pablo Magaz",
   "private": true,
   "scripts": {
-    "tsc": "tsc",
-    "logo": "node ./src/base/conf/.react-base/logo.js",
-    "clean": "rimraf dist && rimraf .cache",
-    "prettify": "prettier --write './src/**/*.{js,ts,tsx}'",
-    "lint": "npm run logo && eslint src --ext .ts --ext .tsx --ext .js",
-    "start": "npm run logo && cross-env NODE_ENV=development ts-node server",
-    "start:prod": "npm run build && cross-env NODE_ENV=production ts-node server",
-    "build": "npm run logo && npm run clean && cross-env NODE_ENV=production parcel build src/app/index.html -d dist --no-cache",
     "postinstall": "npm run clean",
+    "logo": "ts-node ./src/base/conf/.react-base/logo.ts",
+    "clean": "rimraf dist && rimraf .cache",
+    "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "npm run logo && eslint src --ext .ts --ext .tsx --ext .js --ext .jsx",
+    "types": "tsc --noEmit",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "build": "npm run logo && npm run clean && cross-env NODE_ENV=production parcel build src/app/index.html -d dist --no-cache",
+    "start": "npm run logo && cross-env NODE_ENV=development ts-node server",
+    "start:prod": "npm run build && cross-env NODE_ENV=production ts-node server"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint"
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn build",
+      "pre-commit": "lint-staged && npm run types",
+      "pre-push": "npm run test && npm run build",
       "commit-msg": "echo ⚠️ THINK BEFORE ACTING AND REMEMBER, LESS IS MORE. KISS!! "
     }
   },
@@ -70,6 +75,7 @@
     "esm": "3.2.25",
     "husky": "2.3.0",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.5",
     "parcel-plugin-bundle-visualiser": "1.2.0",
     "prettier-eslint": "8.8.2",
     "redux-devtools-extension": "2.13.8",

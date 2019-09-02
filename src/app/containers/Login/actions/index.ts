@@ -6,6 +6,6 @@ export const loginRequest = (): LoginActionType => ({
   request: api.postRequest()
 });
 
-export const loginError = (): LoginActionType => ({
-  type: ActionTypes.LOGIN_ERROR
+export const logoutRequest = (): LoginActionType => ({
+  type: ActionTypes.LOGOUT_REQUEST
 });

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -31,7 +32,7 @@
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "test", "**/*.spec.tsx"],
+  "exclude": ["node_modules"],
   "paths": {
     "*": ["src/types/*", "*"],
     "@app/*": ["src/app/*"],

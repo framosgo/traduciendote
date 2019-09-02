@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { Routes } from '../../routes';
 
-const App: React.FunctionComponent = () => <Routes />;
+const App: React.FC = () => <Routes />;
 
 export default App;

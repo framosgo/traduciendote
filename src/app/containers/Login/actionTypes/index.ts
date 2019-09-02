@@ -10,6 +10,10 @@ export enum ActionTypes {
 }
 
 type LoginRequest = Action<ActionTypes.LOGIN_REQUEST>;
+type LoginSuccess = Action<ActionTypes.LOGIN_SUCCESS>;
 type LoginError = Action<ActionTypes.LOGIN_ERROR>;
+type LogoutRequest = Action<ActionTypes.LOGOUT_REQUEST>;
+type LogoutSuccess = Action<ActionTypes.LOGOUT_SUCCESS>;
+type LogoutError = Action<ActionTypes.LOGOUT_ERROR>;
 
-export type LoginActionType = LoginRequest | LoginError;
+export type LoginActionType = LoginRequest | LoginSuccess | LoginError | LogoutRequest | LogoutSuccess | LogoutError;

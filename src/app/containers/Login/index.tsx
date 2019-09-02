@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Loading from 'components/Loading/index';
-import { AppState } from '../../types/index';
+import Loading from 'components/Loading';
 
-import { useLoginRequest } from './hooks/index';
+import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
+import { getLoginData } from './selectors';
 
 interface Props {
   label: string;
@@ -15,7 +15,7 @@ interface Props {
 const LoginContainer: React.FunctionComponent<Props> = (props: Props) => {
   useLoginRequest();
 
-  const { login } = useSelector((state: AppState): AppState => state);
+  const login = useSelector(getLoginData);
   const { id, name } = login;
   const { label, count } = props;
 
