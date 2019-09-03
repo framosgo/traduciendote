@@ -22,23 +22,21 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "paths": {
-      "components/*": ["src/app/components/*"],
-      "containers/*": ["src/app/containers/*"],
+      "assets/*": ["src/app/assets/*"],
       "app/*": ["src/app/*"],
       "base": ["src/base/index"],
       "base/*": ["src/base/*"],
-      "assets/*": ["src/app/assets/*"],
+      "components/*": ["src/app/components/*"],
+      "containers/*": ["src/app/containers/*"],
+      "mocks/*": ["server/mocks/*"],
+      "server": ["server/index"],
+      "server/*": ["server/*"],
+      "store": ["src/base/store/index"],
+      "store/*": ["src/base/store/*"],
       "types": ["src/app/types/index"]
     }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"],
-  "paths": {
-    "*": ["src/types/*", "*"],
-    "@app/*": ["src/app/*"],
-    "@base/*": ["src/base/*"],
-    "@assets/*": ["src/app/assets/*"],
-    "services/*": ["services/*"]
-  },
   "typeRoots": ["node_modules/@types", "src/types"]
 }
