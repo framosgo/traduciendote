@@ -16,6 +16,7 @@ there must be some changes needed by the structure to fit your needs correctly
 
 - [React]() based UI
 - [Redux](http://redux.js.org/) based architecture
+- [Immer](https://github.com/immerjs/immer) is used to ensure redux state immutability
 - [Styled Components](https://www.styled-components.com/) based styles
 - Isomorphic / Universal Javascript Apps
 - [Parcel](https://github.com/parcel-bundler/) builder
@@ -88,7 +89,6 @@ base
   conf/ // Configuration files
   reducers/  // reducer index
   shared/ // shared base folder
-    combineImmerReducer // Use immer to generate immutable reducers
     createReducer // Custom reducer creator
     env // Env setup
     envConfig // Env handler
@@ -217,24 +217,35 @@ export const createUserFromServer = ({
 
 Reducers describe how the state of your application changes in response to a new Action. React-Base uses a custom CreateReducer that allows to use separated reducers functions instead of "switch based" reducers.
 
+These functions will `produce` a new state using [Immer](https://github.com/immerjs/immer), so we avoid to maintain unchanged pieces of the state.
+
 ```javascript
 import { createReducer } from "base";
+import produce from "immer";
 import { initialState } from "../models";
 import { ContainerState } from "../types";
 
-const click = (state: ContainerState, action): ContainerState =>
-  state.update("mainData", value => action.payload);
+const click = (state: ContainerState, action) =>
+  produce(state, draft => {
+    draft.mainData = action.payload;
+  });
 
-const request = (state: ContainerState, action): ContainerState => state;
+const success = (state: ContainerState, action) =>
+  produce(state, draft => {
+    draft.user = action.payload.user;
+  });
 
 const actionHandlers = {
   [ActionTypes.CLICK]: click,
-  [ActionTypes.MAIN_REQUEST]: request,
   [ActionTypes.MAIN_SUCCESS]: success
 };
 
 export default createReducer(initialState, actionHandlers);
 ```
+
+This `produce` will be setup on each funcion, as per [Immer developer's recommendation](https://github.com/immerjs/immer#reducer-example):
+
+_Note: it might be tempting after using producers for a while, to just place `produce` in your root reducer and then pass the draft to each reducer and work directly over such draft. Don't do that. It kills the point of Redux where each reducer is testable as pure reducer. Immer is best used when applying it to small individual pieces of logic._
 
 ### Selectors
 

@@ -1,20 +1,40 @@
 import { createReducer } from 'base';
 import { ActionHandler } from 'base/types';
+import produce from 'immer';
 import { ActionTypes, LoginActionType } from '../actionTypes';
 import { loginInitialState } from '../models';
 import { LoginState } from '../types';
 
-const loginRequest = (state: LoginState): LoginState => ({ ...state, isFetching: true });
-const loginError = (state: LoginState): LoginState => ({ ...state, isFetching: false });
-const loginSuccess = (state: LoginState, action: LoginActionType): LoginState => ({
-  ...state,
-  ...action.payload,
-  isFetching: false
-});
+const loginRequest = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = true;
+  });
 
-const logoutRequest = (state: LoginState): LoginState => ({ ...state, isFetching: true });
-const logoutError = (state: LoginState): LoginState => ({ ...state, isFetching: false });
-const logoutSuccess = (): LoginState => ({ ...loginInitialState });
+const loginError = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = false;
+  });
+
+const loginSuccess = (state: LoginState, action: LoginActionType) =>
+  produce(state, draft => {
+    Object.keys(action.payload).forEach(key => {
+      // @ts-ignore
+      draft[key] = action.payload[key];
+    });
+    draft.isFetching = false;
+  });
+
+const logoutRequest = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = true;
+  });
+
+const logoutError = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = false;
+  });
+
+const logoutSuccess = () => ({ ...loginInitialState });
 
 const actionHandlers: ActionHandler<LoginState> = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,
