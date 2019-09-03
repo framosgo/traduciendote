@@ -10,11 +10,33 @@ You can use it to quickly scaffold your React web application projects and devel
 This seed should clarify how to wire up all the modules of your application, even when we understand that in some cases
 there must be some changes needed by the structure to fit your needs correctly
 
+- [Overview](#overview)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+  - [Wiring up your development environment](#wiring-up-your-development-environment)
+  - [Initializing development server](#initializing-development-server)
+- [Architecture](#architecture)
+  - [Action Types](#action-types)
+  - [Actions](#actions)
+  - [Models](#models)
+  - [Reducers](#reducers)
+  - [Selectors](#selectors)
+- [Distribution](#distribution)
+  - [Building your production application](#building-your-production-application)
+  - [Running production server](#running-production-server)
+- [Testing](#testing)
+  - [Running your tests](#running-your-tests)
+  - [Generating code coverage](#generating-code-coverage)
+- [License](#license)
+- [Docs](/docs)
+  - [CSS tooling](/docs/css-tooling.md)
+
 ## Overview
 
 **React-Base** makes use of the latest tools to improve your workflow, and enables you to create future ready applications:
 
-- [React]() based UI
+- [React](https://reactjs.org/) based UI
 - [Redux](http://redux.js.org/) based architecture
 - [Immer](https://github.com/immerjs/immer) is used to ensure redux state immutability
 - [Styled Components](https://www.styled-components.com/) based styles

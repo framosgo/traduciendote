@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { TABLET } from 'app/styles/media-queries';
-import { TEXT_COLOR } from 'app/styles/skin';
+import { TABLET } from 'base/styles/media-queries';
+import { TEXT_COLOR } from 'base/styles/skin';
 
 export const Container = styled.div`
   padding: 1rem;

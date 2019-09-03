@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { HEADER_SIZE, HEADER_SIZE_TABLET } from 'app/styles/sizes';
-import { HEADER_BORDER_COLOR, HEADER_BACKGROUND } from 'app/styles/skin';
-import { TABLET } from 'app/styles/media-queries';
-import getLayerPosition from 'app/styles/z-index';
+import { HEADER_SIZE, HEADER_SIZE_TABLET } from 'base/styles/sizes';
+import { HEADER_BORDER_COLOR, HEADER_BACKGROUND } from 'base/styles/skin';
+import { TABLET } from 'base/styles/media-queries';
+import getLayerPosition from 'base/styles/z-index';
 
 export const Wrapper = styled.header``;
 Wrapper.displayName = 'Wrapper';
