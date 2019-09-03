@@ -1,9 +1,9 @@
 import { LoginState, UserFromServer, LoggedUser } from '../types';
 
-export const loginState: LoginState = {
+export const loginInitialState: LoginState = {
   id: -1,
   name: 'Default Text',
-  isFetching: true
+  isFetching: false
 };
 
 export const createUserFromServer = ({ id, name }: UserFromServer): LoggedUser | undefined => {

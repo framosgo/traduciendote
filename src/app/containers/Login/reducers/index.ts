@@ -1,7 +1,7 @@
 import { createReducer } from 'base';
 import { ActionHandler } from 'base/types';
 import { ActionTypes, LoginActionType } from '../actionTypes';
-import { loginState } from '../models';
+import { loginInitialState } from '../models';
 import { LoginState } from '../types';
 
 const loginRequest = (state: LoginState): LoginState => ({ ...state, isFetching: true });
@@ -14,7 +14,7 @@ const loginSuccess = (state: LoginState, action: LoginActionType): LoginState =>
 
 const logoutRequest = (state: LoginState): LoginState => ({ ...state, isFetching: true });
 const logoutError = (state: LoginState): LoginState => ({ ...state, isFetching: false });
-const logoutSuccess = (state: LoginState): LoginState => ({ ...state, isFetching: false });
+const logoutSuccess = (): LoginState => ({ ...loginInitialState });
 
 const actionHandlers: ActionHandler<LoginState> = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,
@@ -25,4 +25,4 @@ const actionHandlers: ActionHandler<LoginState> = {
   [ActionTypes.LOGOUT_SUCCESS]: logoutSuccess
 };
 
-export default createReducer(loginState, actionHandlers);
+export default createReducer(loginInitialState, actionHandlers);
