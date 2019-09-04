@@ -79,6 +79,7 @@
     "import/no-unresolved": "off",
     "import/no-named-as-default": "off",
     "import/prefer-default-export": "off",
+    "no-restricted-imports": ["error", { "patterns": ["**/do-not-export/*"] }],
 
     "no-restricted-syntax": [
       "error",

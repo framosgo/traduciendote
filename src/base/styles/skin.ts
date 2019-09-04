@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import { BLUE_1,
   PINK_1,
   WHITE_2,
