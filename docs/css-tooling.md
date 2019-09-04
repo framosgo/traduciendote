@@ -87,6 +87,19 @@ For example, you would like to have a header with a fixed height of `3rem`, and 
 
 On these scenarios, you should move your `3rem` value to a constant. For that purpose **React-base** provides you with `./src/base/styles/sizes.ts`
 
+```javascript
+import styled from "styled-components";
+import { HEADER_SIZE } from "base/styles/sizes";
+
+const Header = styled.header`
+  height: ${HEADER_SIZE};
+`;
+
+const Content = styled.main`
+  height: calc(100vh - ${HEADER_SIZE});
+`;
+```
+
 ## Using media-quieries
 
 Now that we have styles in javascript, we can take advantages of variables to generate a solid and reusable `media-queries` system.
@@ -95,9 +108,10 @@ Now that we have styles in javascript, we can take advantages of variables to ge
 
 By default, `./src/base/styles/media-queries.ts` exports 2 different types of `media-queries`:
 
-- Minimum: Styles will be applied when the screen is **equal or bigger** than specified width
-- Maximum: Styles will be applied when the screen is **smaller** than specified width
-  _There are some custom `media-queries`, like `LANDSCAPE` or `LANDSCAPE_OR_TABLET`. Check the file to know more about them_
+- Maximum: Styles will be applied when the screen width is **smaller** than specified width
+- Minimum: Styles will be applied when the screen width is **equal or bigger** than specified width
+
+_There are some custom `media-queries`, like `LANDSCAPE` or `LANDSCAPE_OR_TABLET`. Check the file to know more about them_
 
 When building a responsive site, you should start specifiying your CSS properties for smaller screens, and use _minimum_ media-queries to modify your component's appearance as the screen size increases.
 
@@ -121,6 +135,7 @@ export const HeaderBar = styled.div`
 
   ${DESKTOP} {
     height: 5rem;
+    padding: 2rem;
   }
 `;
 ```
