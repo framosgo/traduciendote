@@ -2,14 +2,14 @@ import React, { FunctionComponent } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { initialState } from 'base/store/index';
-import { configureStore } from 'base/store/index';
+import { configureStore } from 'base/store';
 import App from 'containers/App';
 
-const store = configureStore(initialState);
+const store = configureStore();
 
 const ReactApp: FunctionComponent = () => (
-  <Provider store={ store }>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  <Provider store={ store as any }>
     <App />
   </Provider>
 );

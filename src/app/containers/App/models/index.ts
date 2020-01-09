@@ -1,13 +1,7 @@
-import { AppState } from 'types';
-
-export interface AppModel {
+export interface AppState {
   readonly lang: string;
 }
 
-export const appInitialState: AppModel = {
+export const appInitialState: AppState = {
   lang: ''
-};
-
-export const setInitialState = (initialState: AppState): AppState => {
-  return (initialState.login = appInitialState);
 };

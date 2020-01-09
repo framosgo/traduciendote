@@ -1,30 +1,20 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Loading from 'components/Loading/index';
-import { AppState } from '../../types/index';
+import Loading from 'components/Loading';
 
-import { useLoginRequest } from './hooks/index';
+import { useLoginRequest } from './hooks';
 import { Container, Text } from './styles';
+import { getLoginData, isFetchingLogin } from './selectors';
 
-interface Props {
-  label: string;
-  count: number;
-  onIncrement: () => void;
-}
-
-const LoginContainer: React.FunctionComponent<Props> = (props: Props) => {
+const LoginContainer: React.FunctionComponent = () => {
   useLoginRequest();
 
-  const { login } = useSelector((state: AppState): AppState => state);
-  const { id, name } = login;
-  const { label, count } = props;
+  const { id, name } = useSelector(getLoginData);
+  const isLoading = useSelector(isFetchingLogin);
 
   return (
     <Container>
-      <Loading text="hola" />
-      <Text>
-        { label } { count }
-      </Text>
+      { isLoading && <Loading /> }
       <Text>
         { id } { name }
       </Text>

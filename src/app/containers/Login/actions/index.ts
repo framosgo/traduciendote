@@ -3,9 +3,9 @@ import { ActionTypes, LoginActionType } from '../actionTypes';
 
 export const loginRequest = (): LoginActionType => ({
   type: ActionTypes.LOGIN_REQUEST,
-  request: api.postRequest()
+  request: api.loginRequest()
 });
 
-export const loginError = (): LoginActionType => ({
-  type: ActionTypes.LOGIN_ERROR
+export const logoutRequest = (): LoginActionType => ({
+  type: ActionTypes.LOGOUT_REQUEST
 });

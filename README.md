@@ -2,37 +2,55 @@
 
 # React-Base
 
-
 **A modular platform for Redux applications**
 
-This repository is a modular abstraction to build a [ReactJS](https://facebook.github.io/react/) web application based on [Redux](http://redux.js.org/)  paradigm.
+This repository is a modular abstraction to build a [ReactJS](https://facebook.github.io/react/) web application based on [Redux](http://redux.js.org/) paradigm.
 You can use it to quickly scaffold your React web application projects and development environments for these projects.
 
 This seed should clarify how to wire up all the modules of your application, even when we understand that in some cases
 there must be some changes needed by the structure to fit your needs correctly
 
+- [Overview](#overview)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+  - [Wiring up your development environment](#wiring-up-your-development-environment)
+  - [Initializing development server](#initializing-development-server)
+- [Architecture](#architecture)
+  - [Action Types](#action-types)
+  - [Actions](#actions)
+  - [Models](#models)
+  - [Reducers](#reducers)
+  - [Selectors](#selectors)
+- [Distribution](#distribution)
+  - [Building your production application](#building-your-production-application)
+  - [Running production server](#running-production-server)
+- [Testing](#testing)
+  - [Running your tests](#running-your-tests)
+  - [Generating code coverage](#generating-code-coverage)
+- [License](#license)
+- [Docs](/docs)
+  - [CSS tooling](/docs/css-tooling.md)
+
 ## Overview
 
 **React-Base** makes use of the latest tools to improve your workflow, and enables you to create future ready applications:
 
+- [React](https://reactjs.org/) based UI
 - [Redux](http://redux.js.org/) based architecture
+- [Immer](https://github.com/immerjs/immer) is used to ensure redux state immutability
+- [Styled Components](https://www.styled-components.com/) based styles
 - Isomorphic / Universal Javascript Apps
-- [Parcel](https://github.com/parcel-bundler/) builder 
-- Immutable data modeling using [ImmutableJS](https://facebook.github.io/immutable-js/)
-- Store middleware to handle request actions. 
+- [Parcel](https://github.com/parcel-bundler/) builder
+- Store middleware to handle request actions.
 - Development & Production server using [express](https://github.com/expressjs/express) and [webpack-dev-server](https://webpack.github.io/)
-- Hot Reload/Live Reload support for Js & Css using  [Webpack HMR](https://webpack.github.io/docs/hot-module-replacement.html)
-- Container and component generators using [Yeoman](https://github.com/yeoman/yo)
+- Hot Reload/Live Reload support for Js & Css using [Webpack HMR](https://webpack.github.io/docs/hot-module-replacement.html)
 - JSX and ES6 transpilation using [Babel](https://babeljs.io/)
-- [Mocha](https://mochajs.org/) as testing framework
-- [Enzyme/JsDom](https://github.com/airbnb/enzyme) for unit/ui testing
-- [Nyc](https://github.com/bcoe/nyc) for code coverage
-- [PostCSS](http://postcss.org/) processing with isomorphic support.
-- [CssModules](https://github.com/css-modules/css-modules) based
-- Code Linting using [Eslint](https://github.com/eslint/eslint)
-- Css Linting using [CssLint](https://github.com/stylelint/stylelint)
+- [Eslint](https://github.com/eslint/eslint) as linting utils
+- [TypeScript](https://www.typescriptlang.org/) as static types superset
+- [Jest](https://jestjs.io/) as testing and coverage framework
+- [Enzyme](https://github.com/airbnb/enzyme) as testing utils for React
 - [Airbnb](https://github.com/airbnb/javascript/tree/master/react) React Style Guide
-
 
 ## Getting Started
 
@@ -40,132 +58,118 @@ To get you started, you need to meet the prerequisites, and then follow the inst
 
 ### Prerequisites
 
-React-Base makes use a number of NodeJS tools to initialize and test React-Base. You must have node.js 6.2.0 at least, and its package manager (npm) installed. You can get it from [nodejs.org](node).
+React-Base makes use a number of NodeJS tools to initialize and test React-Base. You must have node.js 6.2.0 at least, and its package manager (npm) installed. You can get it from [NodeJS](https://nodejs.org).
+
+You also may want to work with [Yarn](https://yarnpkg.com/), wich is a compatible package manager.
 
 ### Installing
 
 You can clone our Git repository:
 
-`$ git clone https://gitlab.com/cddbspain_js_domain/react-base.git
+`$ git clone https://gitlab.com/cddbspain_js_domain/react-base.git`
 
 This method requires Git to be installed on your computer. You can get it from
 [here](http://git-scm.com).
 
 ### Wiring up your development environment
 
-Setting up **React-Base** is as easy as running:
+Setting up **React-Base** is as easy as running one of these two commands:
 
 `$ npm install`
+`$ yarn`
 
 This command will install all the required dependencies and start your development server, which takes care of all the changes you make to your code and runs all the awesome stuff that ends with your code automagically transpiled and running on your browser.
 
-Please note that `npm install` is only required on your first start, or in case of updated dependencies.
-
+Please note that `npm install` or `yarn` is only required on your first start, or in case of updated dependencies.
 
 ### Initializing development server
 
-  Once all the dependencies are installed, you can run `$ npm run start` to initialize your development server using [parcel](https://github.com/parcel-bundler/parcel) express middleware.
+Once all the dependencies are installed, you can run `$ npm run start` or `yarn start` to initialize your development server using [parcel](https://github.com/parcel-bundler/parcel) express middleware.
 
-  The dev server uses  [HMR](https://webpack.github.io/docs/hot-module-replacement.html) (Hot module replacement) that injects updated modules into the bundle in runtime. It's like LiveReload
-
+The dev server uses [HMR](https://webpack.github.io/docs/hot-module-replacement.html) (Hot module replacement) that injects updated modules into the bundle in runtime. It's like LiveReload
 
 ## Architecture
 
-React-base is based on [Redux](http://redux.js.org/)  paradigm so you can find all the typical entities of an Redux project like [reducers](http://redux.js.org/docs/basics/Reducers.html) , [store](http://redux.js.org/docs/basics/Store.html), [actions](http://redux.js.org/docs/basics/Actions.html) , etc.
+React-base is based on [Redux](http://redux.js.org/) paradigm so you can find all the typical entities of an Redux project like [reducers](http://redux.js.org/docs/basics/Reducers.html) , [store](http://redux.js.org/docs/basics/Store.html), [actions](http://redux.js.org/docs/basics/Actions.html) , etc.
 
 There are four main folders:
 
-* `server` contains React-Base development & production server based in express with Universal/Isomorphic support and custom middlewares like Gzip.
+- `server` contains React-Base development & production server based in express with Universal/Isomorphic support and custom middlewares like Gzip.
 
 ```javascript
-server
-  mocks/ //Api mocks
-  routing/ //routing files
-  statics/ //definition of  statics path
-    server  //Server  
+server;
+mocks / //Api mocks
+routing / //routing files
+statics / //definition of  statics path
+  server; //Server
 ```
 
-* `src/base/` contains React-Base platform bootstrapping code.
+- `src/base/` contains React-Base platform bootstrapping code.
 
 ```javascript
 base
-  client/ //client bootstrap
-  conf/ //Configuration files and Yeoman templates
-  middleware/ //Redux Store middleware
-  components/ //base components
-  models/ //model index
-  reducers/  //reducer index
-  routes/ //routes index
+  conf/ // Configuration files
+  reducers/  // reducer index
   shared/ // shared base folder
-    regenerators/ //index regenerators
-    CreateActionType //Custom action type creator
-    CreateReducer //Custom reducer creator
-    ENV //Env handler
-    Errors //Errors handler
-    FetchData //Isomorfic data handler
-    FileSystem //Filesystem manager
-    JsDomSetup //JsDom Configuration FileSystem
-    ModelHelper //Inmutable deserializators
-    Regenerate // Regenerate indexes
-  store/ //Store configuration and AppState definition
-  types/ //Action request Types
-  wp-plugins/ //Custom webpack plugins
+    createReducer // Custom reducer creator
+    env // Env setup
+    envConfig // Env handler
+    fileSystem // Filesystem manager
+    http // Custom HTTP interface
+  store/ // Store configuration and RootState definition
+  types/ // Action, root state and root reducer types definitions
   ...
 ```
 
-* `src/app/` is the place where to put your application source code.
+- `src/app/` is the place where to put your application source code.
 
 React-Base uses a "featured based" distribution, so all the necessary code for each page/features is located in its own folder inside containers folder as in `src/app/containers/myContainer`
 
 A container is a React component who contains other components, Redux entities, functions and store subscriptions. Each container is self-contained and represents a feature like "clients" or "products" and it contains all the necessary stuff.
+
 ```javascript
 app/
   containers/
     myContainer/
-      api/ //api calls
-      actionTypes/ //action types definition
-      actions/ //action creators
-      components/ //container components
-      models/ //containers models using immutable
-      reducers/ //container reducers
-      index.ts //container component
+      actionTypes/ // action types definition
+      actions/ // action creators
+      api/ // api calls
+      components/ // smaller components used in the functional component
+      hooks/ // custom hooks used in the functional component
+      models/ // models using immutable
+      reducers/ // reducer node for this container
+      selectors/ // selectors to access particular data in our reducers
+      styles/ // styles for the functional component
+      types/ // type definitions used on this container
+      index.spec.tsx // Test cases for the functional component
+      index.tsx // functional component
   ...
 ```
 
-## Action Types
+### Action Types
+
 ActionTypes it's a representation using constants of your possible actions:
 
 ```javascript
-import { createActionType } from 'base';
-
-export const ActionTypes = createActionType([
-  'CLICK',
-  'MAIN_CONTAINER',
-  'MAIN_ERROR',
-  'MAIN_REQUEST',
-  'MAIN_SUCCESS',
-  'LAZY_CONTAINER',
-  'LOGIN',
-]);
-
+export enum ActionTypes {
+  LOGIN_REQUEST = 'LOGIN_REQUEST',
+  LOGIN_SUCCESS = 'LOGIN_SUCCESS',
+  LOGIN_ERROR = 'LOGIN_ERROR',
+  CLICK = 'CLICK',
+}
 ```
 
-## Actions
-Actions are payloads of information witch represent that something happend in your application and  send data from your application to your store:
+### Actions
+
+Actions are payloads of information witch represent that something happend in your application and send data from your application to your store:
 
 ```javascript
-clickHandler(id) {
-    return {
-      type: ActionTypes.USER_CLICK,
-      payload: {
-        id: id
-      }
-    };
-}
-
+export const click = () => ({
+  type: ActionTypes.CLICK
+});
 ```
 
-React-Base include a Redux Store middleware to handle actions with service calls more easyly.  You can define in the api folder of your container, an api call based in a fetch call:
+React-Base include a Redux Store middleware to handle actions with service calls more easyly. You can define in the api folder of your container, an api call based in a fetch call:
 
 ```javascript
 
@@ -173,7 +177,7 @@ React-Base include a Redux Store middleware to handle actions with service calls
     return fetch(url)
       .then(req => req.json())
       .then(data => data)
-      .catch(err => err) 
+      .catch(err => err)
   },
 
 ```
@@ -181,94 +185,104 @@ React-Base include a Redux Store middleware to handle actions with service calls
 Then, in your action you can attach this service call in your action using the request param:
 
 ```javascript
-export function getPosts() {
-  return {
-    type: ActionTypes.USERS_REQUEST,
-    request: api.fetchUsers()
-  };
-}
+import * as api from "../api";
+
+export const loginRequest = () => ({
+  type: ActionTypes.LOGIN_REQUEST,
+  request: api.loginRequest()
+});
 ```
 
-The request middleware will resolve the request param 
- and dispatch a new action with "ACTION_SUCCESS" or "ACTION_ERROR" with the response of the request in the payload. 
+The request middleware will resolve the request param
+and dispatch a new action with "ACTION_SUCCESS" or "ACTION_ERROR" with the response of the request in the payload.
 
-## Reducers
-Reducers describe how the state of your application changes in response to a new Action. React-Base uses a custom CreateReducer that allows to use separated reducers functions instead of "switch based" reducers.
+### Models
+
+Stores some of the elements you're going to use in the application, such as the initial state of the container reducer.
+
+Here there are also `modelCreators`, which are functions to parse results from any API on the internet, and make sure the result of those requests are a valid model for your application, that respects your typing requirements.
 
 ```javascript
-import { createReducer } from 'base';
+import { LoginState, UserFromServer, LoggedUser } from "../types";
 
-const click = (state, action) => {
-  return state.update('mainData', (value) => action.payload);
+// Model for the initialState of your reducer
+export const initialState: LoginState = {
+  id: -1,
+  name: "Default Text",
+  isFetching: false
 };
 
-const request = (state, action) => {
-  return state;
+// Model creator will ensure the data provided by the server is valid.
+// If data is not valid, you can throw an error and discard that data, to prevent
+// crashing the application
+export const createUserFromServer = ({
+  id,
+  name
+}: UserFromServer): LoggedUser | undefined => {
+  if (typeof id === "undefined" || typeof name === "undefined") {
+    console.error(
+      "Error creating user model, some of mandatory properties is missing",
+      { id, name }
+    );
+
+    return undefined;
+  }
+
+  return {
+    id: Number(id),
+    name: String(name)
+  };
 };
+```
+
+### Reducers
+
+Reducers describe how the state of your application changes in response to a new Action. React-Base uses a custom CreateReducer that allows to use separated reducers functions instead of "switch based" reducers.
+
+These functions will `produce` a new state using [Immer](https://github.com/immerjs/immer), so we avoid to maintain unchanged pieces of the state.
+
+```javascript
+import { createReducer } from "base";
+import produce from "immer";
+import { initialState } from "../models";
+import { ContainerState } from "../types";
+
+const click = (state: ContainerState, action) =>
+  produce(state, draft => {
+    draft.mainData = action.payload;
+  });
+
+const success = (state: ContainerState, action) =>
+  produce(state, draft => {
+    draft.user = action.payload.user;
+  });
 
 const actionHandlers = {
   [ActionTypes.CLICK]: click,
-  [ActionTypes.LOGIN]: login,
-  [ActionTypes.MAIN_REQUEST]: request,
-  [ActionTypes.MAIN_SUCCESS]: success,
+  [ActionTypes.MAIN_SUCCESS]: success
 };
 
-export default CreateReducer(actionHandlers, new MainModel());
-
+export default createReducer(initialState, actionHandlers);
 ```
 
-## Models
-Represents your model data using ImmutableJS Data Types and sets its initial state using setInitialState() function.
+This `produce` will be setup on each funcion, as per [Immer developer's recommendation](https://github.com/immerjs/immer#reducer-example):
 
+_Note: it might be tempting after using producers for a while, to just place `produce` in your root reducer and then pass the draft to each reducer and work directly over such draft. Don't do that. It kills the point of Redux where each reducer is testable as pure reducer. Immer is best used when applying it to small individual pieces of logic._
+
+### Selectors
+
+Selectors are abstracted functions to access to a particular point of your container store.
+
+We use to access to the same data from different access points, and we also use to need data A to check/generate data B. In these scenarios, abstract selectors in simple and atomic functions will help us to minimize errors when changing reducer's shape
 
 ```javascript
-import { Record } from 'immutable';
+import { RootState } from "base/types";
 
-const MainModel = new Record({
-  display:0,
-  operator:'',
-  operation:'',
-  prevValue: 0,
-  nextValue: 0,
-  newValue: false,
-  resetDisplay: false,
-});
+export const getLoginData = ({ login: { isFetching, ...data } }: RootState) =>
+  data;
 
-function setInitialState(initialState) {
-  return initialState.Maiin = new MainModel();
-}
-
-export { MainModel, setInitialState };
-
-
+export const isFetchingLogin = ({ login }: RootState) => login.isFetching;
 ```
-### Generating a new container
-
-React-base uses Yeoman to generate new application containers or components.
-
-Fist of all you need to link yo:
-
-`$ npm run yo`
-
-Then, you can generate a new container run:
-
-`$ npm run generate:container`
-
-You'll be asked to provide a name for your container. After that, React-base will create all the necessary folder and file template structures you, and will rebuild the file indexes (routes, reducers, models, etc), so you don't have to worry about including all the required imports.
-
-After that, you can access to your container from http://localhost:8000/myContainer
-
-### Regenerating indexes
-
-You can rebuild the file indexes (reducers, models and routes) running `$ npm run regenerate`
-
-### Generating a new component
-
-As with containers, React-base can automate components creation for you. To create a new component, just type:
-
-`$ npm run generate:component`
-
-Same as before, you will be asked for a component name, and after that React-base will do the rest, placing a component template under `app/components`, and rebuilding all the indexes.
 
 ## Distribution
 
@@ -276,36 +290,25 @@ You can generate a complete distribution source ready for production enviroments
 
 ### Building your production application
 
-`$ npm run build:prod` will create a minified version for your application, ready for production.
+`$ npm run build:prod` or `$ yarn build:prod` will create a minified version for your application, ready for production.
 
 ### Running production server
 
-`$ npm run start:prod` will run production enviroment of your application serving content from dist directory.
+`$ npm run start:prod` or `$ yarn start:prod` will run production enviroment of your application serving content from dist directory.
 
+## Testing
 
-## Testing your application
-
-React base uses - [Enzyme](https://github.com/airbnb/enzyme) a testing utillity created by [Airbnb](https://github.com/airbnb/) for unit testing and Ui testing using [Airbnb](https://github.com/tmpvar/jsdom) so you can run your ui testing without a browser.
-
-You can write your tests normally using Mocha and Chai for assertions.
+React base uses [Enzyme](https://github.com/airbnb/enzyme) a testing utillity created by [Airbnb](https://github.com/airbnb/) for unit testing and Ui testing using [JsDom](https://github.com/tmpvar/jsdom) so you can run your ui testing without a browser.
 
 ### Running your tests
 
-`$ npm run test` will perform your unit testing, or npm test:coverage to run your tests and display a code coverage report.
+`$ npm run test` or `yarn test` will perform your unit testing, or npm test:coverage to run your tests and display a code coverage report.
 
 ### Generating code coverage
 
-React base uses [Nyc](https://github.com/bcoe/nyc) for code coverage and you can generate reports in console or icov/html format.
+React base uses [Jest](https://jestjs.io/) for code coverage and you can generate reports in console or icov/html format.
 
-`$ npm run test` will perform your code coverage, generating an html report located in coverage/ folder.
-
-## Contributing
-
-Anyone and everyone is welcome to contribute, however, if you decide to get involved, please take a moment to review the [guidelines](CONTRIBUTING.md):
-
-* [Bug reports](CONTRIBUTING.md#bugs)
-* [Feature requests](CONTRIBUTING.md#features)
-* [Pull requests](CONTRIBUTING.md#pull-requests)
+`$ npm run test:coverage` or `yarn test:coverage` will perform your code coverage, generating an html report located in coverage/ folder.
 
 ## License
 

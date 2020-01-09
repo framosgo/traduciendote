@@ -1,19 +1,42 @@
 import { createReducer } from 'base';
-import { LoginType, loginState } from '../models';
+import { ActionHandler } from 'base/types';
+import produce from 'immer';
 import { ActionTypes, LoginActionType } from '../actionTypes';
+import { loginInitialState } from '../models';
+import { LoginState } from '../types';
 
-const loginRequest = (state: LoginType): LoginType => state;
-const loginError = (state: LoginType): LoginType => state;
-const loginSuccess = (state: LoginType, action: LoginActionType): LoginType => {
-  // FIXME TYPES
-  console.log(111111, state);
-  return action.payload;
-};
-const logoutRequest = (state: LoginType): LoginType => state;
-const logoutError = (state: LoginType): LoginType => state;
-const logoutSuccess = (state: LoginType): LoginType => state;
+const loginRequest = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = true;
+  });
 
-const actionHandlers = {
+const loginError = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = false;
+  });
+
+const loginSuccess = (state: LoginState, action: LoginActionType) =>
+  produce(state, draft => {
+    Object.keys(action.payload).forEach(key => {
+      // @ts-ignore
+      draft[key] = action.payload[key];
+    });
+    draft.isFetching = false;
+  });
+
+const logoutRequest = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = true;
+  });
+
+const logoutError = (state: LoginState) =>
+  produce(state, draft => {
+    draft.isFetching = false;
+  });
+
+const logoutSuccess = () => ({ ...loginInitialState });
+
+const actionHandlers: ActionHandler<LoginState> = {
   [ActionTypes.LOGIN_REQUEST]: loginRequest,
   [ActionTypes.LOGIN_ERROR]: loginError,
   [ActionTypes.LOGIN_SUCCESS]: loginSuccess,
@@ -22,4 +45,4 @@ const actionHandlers = {
   [ActionTypes.LOGOUT_SUCCESS]: logoutSuccess
 };
 
-export default createReducer(loginState, actionHandlers);
+export default createReducer(loginInitialState, actionHandlers);

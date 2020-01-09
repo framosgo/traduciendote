@@ -1,13 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import * as React from 'react';
 import { Container } from './styles';
 
 interface Props {
-  text: string;
+  text?: string;
 }
 
-const Loading: FunctionComponent<Props> = (props: Props) => {
-  const { text } = props;
-  return <Container>{ text }</Container>;
-};
+const Loading: React.FC<Props> = ({ text = 'Loading...' }: Props) => <Container>{ text }</Container>;
 
 export default Loading;

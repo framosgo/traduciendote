@@ -1,12 +1,13 @@
 import { http, envConf } from 'base';
-import { LoginModel } from '../models';
+import { createUserFromServer } from '../models';
+import { LoggedUser } from '../types';
 
-export const postRequest = async (): Promise<LoginModel> => {
+export const loginRequest = async (): Promise<LoggedUser | undefined> => {
   try {
-    const { data } = await http.get(`${ envConf.API.LOGIN_GET }`);
-    return data;
+    const { data } = await http.get(envConf.API.LOGIN_GET);
+    return createUserFromServer(data);
   } catch (error) {
     console.error(error);
-    return error;
+    throw new Error(error);
   }
 };
