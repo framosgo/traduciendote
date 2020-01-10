@@ -2,7 +2,12 @@
   "name": "react-base-starter",
   "version": "0.0.1",
   "description": "React Base Starter Kit",
-  "author": "Pablo Magaz",
+  "authors": [
+    "Pablo Magaz (@pmagaz)",
+    "José Bermudo (@josemanuelbd)",
+    "Alberto Martín (@albertoMartin1988)",
+    "Rafael Pérez (@rperez.cognizant)"
+  ],
   "private": true,
   "scripts": {
     "postinstall": "npm run clean",
