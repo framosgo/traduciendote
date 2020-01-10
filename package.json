@@ -14,6 +14,7 @@
     "logo": "ts-node ./src/base/conf/.react-base/logo.ts",
     "clean": "rimraf dist && rimraf .cache",
     "prettier": "prettier --write './src/**/*.{js,jsx,ts,tsx}'",
+    "check-integrity": "npm run lint && npm run types && npm run test",
     "lint": "npm run logo && eslint src --ext .ts --ext .tsx --ext .js --ext .jsx",
     "types": "tsc --noEmit",
     "test": "jest",

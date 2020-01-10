@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -7,7 +7,7 @@ import App from 'containers/App';
 
 const store = configureStore();
 
-const ReactApp: FunctionComponent = () => (
+const ReactApp: React.FC = () => (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   <Provider store={ store as any }>
     <App />
