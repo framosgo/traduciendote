@@ -31,10 +31,11 @@ export const Global = createGlobalStyle`
 
 export const AppWrapper = styled.main`
   background-color: ${ PRIMARY_BACKGROUND };
-  min-height: calc(100vh - ${ HEADER_SIZE }rem);
+  height: calc(100vh - ${ HEADER_SIZE }rem);
+  overflow-x: auto;
   z-index: ${ getLayerPosition('CONTENT') };
 
   ${ TABLET } {
-    min-height: calc(100vh - ${ HEADER_SIZE_TABLET }rem);
+    height: calc(100vh - ${ HEADER_SIZE_TABLET }rem);
   }
 `;

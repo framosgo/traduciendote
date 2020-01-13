@@ -38,6 +38,7 @@
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks", "jest"],
   "rules": {
+    "@typescript-eslint/ban-ts-ignore": "warn",
     "@typescript-eslint/indent": "off",
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "@typescript-eslint/camelcase": ["off"],

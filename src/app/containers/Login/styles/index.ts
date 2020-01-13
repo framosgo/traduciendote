@@ -12,4 +12,10 @@ export const Container = styled.div`
 
 export const Text = styled.span`
   color: ${ TEXT_COLOR };
+  display: block;
+  padding-bottom: 1rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 `;
