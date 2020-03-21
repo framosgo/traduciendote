@@ -4,7 +4,7 @@ import Bundler from 'parcel-bundler';
 import setRouting from './routing';
 import setStatics from './statics';
 
-const EXPRESS_PORT = 8000;
+const EXPRESS_PORT = process.env.PORT || 8000;
 const entryFiles = path.join(__dirname, '../src/app/index.html');
 const app = express();
 const bundler = new Bundler(entryFiles, {});

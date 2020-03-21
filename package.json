@@ -1,13 +1,8 @@
 {
-  "name": "react-base-starter",
+  "name": "traduciendote",
   "version": "0.0.1",
-  "description": "React Base Starter Kit",
-  "authors": [
-    "Pablo Magaz (@pmagaz)",
-    "José Bermudo (@josemanuelbd)",
-    "Alberto Martín (@albertoMartin1988)",
-    "Rafael Pérez (@rperez.cognizant)"
-  ],
+  "description": "Portfolio de Iria y Carol",
+  "author": "Fernando Ramos",
   "private": true,
   "scripts": {
     "postinstall": "npm run clean",

@@ -1,16 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import * as ROUTES from './routes';
-
-const Login = React.lazy((): Promise<{ default: React.FC }> => import('containers/Login'));
+import Home from 'containers/Home';
+import About from 'containers/About';
+import { ROOT, ABOUT } from './routes';
 
 export const Routes: React.FC = () => (
   <Router>
-    <React.Suspense fallback={ <div>Loading...</div> }>
-      <Switch>
-        <Route exact={ true } path={ ROUTES.ROOT } component={ Login } />
-      </Switch>
-    </React.Suspense>
+    <Switch>
+      <Route exact={ true } path={ ROOT } component={ Home } />
+      <Route exact={ true } path={ ABOUT } component={ About } />
+    </Switch>
   </Router>
 );
